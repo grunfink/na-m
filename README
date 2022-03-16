@@ -1,0 +1,19 @@
+na-m - An assymmetric encryption tool by grunfink - public domain
+
+Encrypts/decrypts a stream of data using a pair of assymmetric keys.
+Usage:
+
+  na-m -G -p pubkey -s seckey     Generate key pairs
+  na-m -R -p pubkey -s seckey     Regenerate pubkey from seckey
+  na-m -E -p pubkey               Encrypt STDIN to STDOUT
+  na-m -D -s seckey               Decrypt STDIN to STDOUT
+
+Examples:
+ (on desktop)
+ $ na-m -G -p ~/.key.pub -s ~/.key.sec
+ $ scp ~/.key.pub server:~/.key.pub
+ (on server, secret key not needed there)
+ $ (cd / && sudo tar czvf - etc/) | na -E -p ~/.key.pub > encrypted
+ (back on desktop, to restore)
+ $ na-m -D -s ~/.key.sec < encrypted > decrypted.tar.gz
+
