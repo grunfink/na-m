@@ -1,4 +1,4 @@
-/* na - A tool for assymmetric encryption of files by grunfink - public domain */
+/* na - A tool for asymmetric encryption of files by grunfink - public domain */
 
 #include "na.h"
 
@@ -145,7 +145,7 @@ int na_encrypt(FILE *i, FILE *o, char *pk_fn)
     if ((ret = read_key_file(pk, sizeof(pk), pk_fn)) != 0)
         goto end;
 
-    /* create a disposable set of assymmetric keys:
+    /* create a disposable set of asymmetric keys:
        the public one shall be inside the encrypted stream
        aside with the encrypted symmetric key */
     random_fill(tmp_sk, sizeof(tmp_sk));
