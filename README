@@ -13,7 +13,7 @@ Examples:
  $ na-m -G -p ~/.key.pub -s ~/.key.sec
  $ scp ~/.key.pub server:~/.key.pub
  (on server, secret key not needed there)
- $ (cd / && sudo tar czvf - etc/) | na -E -p ~/.key.pub > encrypted
+ $ (cd / && sudo tar czvf - etc/) | na-m -E -p ~/.key.pub > encrypted
  (back on desktop, to restore)
  $ na-m -D -s ~/.key.sec < encrypted > decrypted.tar.gz
 
